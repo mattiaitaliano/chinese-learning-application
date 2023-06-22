@@ -1,0 +1,67 @@
+#:import pages pages
+#:import hex kivy.utils.get_color_from_hex
+
+MainLayout:
+
+<MainLayout@BoxLayout>:
+    orientation: "vertical"
+
+    BoxLayout:
+        size_hint_y: None
+        height: 200
+
+        canvas:
+            Color:
+                rgb: hex("#FAFAFA")
+
+            Rectangle:
+                size: self.size
+                pos:self.pos
+
+        Label:
+            size: 400, 200
+            size_hint: None, None
+            text: "学习中文!"
+            font_name: "font/CH.otf"
+            font_size: "20dp"
+            color: hex("#212729")
+            
+        Label:
+            size_hint_x: None
+            width: max(self.parent.width - 400, 800)
+            text_size: self.size
+            halign: "right"
+            valign: "middle"
+            text: "你好 " + "Mattia"+ "!    "
+            color: hex("#212729")
+            font_size: "20dp"
+            font_name: "font/CH.otf"
+
+    BoxLayout:
+        BoxLayout: 
+            size_hint_x: None
+            width: 400
+            canvas:
+                Color:
+                    rgb: hex("#FAFAFA")
+
+                Rectangle:
+                    size: self.size
+                    pos:self.pos
+            GridLayout:
+                cols: 1
+                SideMenuButton:            
+                    text: "Home"
+                SideMenuButton:           
+                    text: "Cards"
+                SideMenuButton:                   
+                    text: "Add"
+                SideMenuButton:                 
+                    text: "Database"               
+                SideMenuButton:
+                    text: "Settings"
+                    
+                      
+        Main:
+            
+

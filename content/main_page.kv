@@ -1,0 +1,67 @@
+#:import pages pages
+#:import NoTransition kivy.uix.screenmanager.NoTransition
+#:import NavigationScreenManager navigation_screen_manager
+
+
+<Main@BoxLayout>:
+    canvas:
+        Color:
+            rgb: hex("#EEEEEE")
+
+        Rectangle:
+            size: self.size
+            pos:self.pos
+    BoxLayout:
+        orientation: "vertical"
+        BoxLayout:
+            size_hint: 1, .05
+        BoxLayout:
+            BoxLayout:
+                size_hint: .03, 1
+            PagesManager:
+            BoxLayout:
+                size_hint: .03, 1
+        BoxLayout:
+            size_hint: 1, .05
+
+
+<PagesManager@NavigationScreenManager>:
+    transition: NoTransition()
+    Screen:
+        name: "Screen1"
+        Home:
+
+
+
+<Home@BoxLayout>:
+    BoxLayout:
+        orientation: "vertical"
+        MyLabel:
+            canvas.before:
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+                    source: 'img/HomeBanner.png'
+
+            text: "Ciao"
+    BoxLayout:
+        orientation: "vertical"
+        MyLabel:
+            text: "Ciao"
+
+
+
+<SideMenuButton@Button>:
+    size_hint_y: None
+    height: self.parent.height * 0.111
+    background_color: 0,0,0,0 
+    font_name: "font/CH.otf"
+    font_size: "15dp"
+    color: hex("#212729")
+
+<MyLabel@Label>:
+    font_name: "font/CH.otf"
+    font_size: "20dp"
+    color: hex("#212729")
+
+
